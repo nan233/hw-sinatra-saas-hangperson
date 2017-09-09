@@ -20,7 +20,7 @@ class HangpersonGame
   
   def guess(attempt)
     if /[a-z]/i.match(attempt)==nil
-      raise ArgumentError
+      raise ArgumentError.new("Invalud guess " + attempt.to_s + '.')
     else
       attempt = attempt.downcase
       if @guesses.include? attempt or @wrong_guesses.include? attempt
